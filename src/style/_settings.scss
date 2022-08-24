@@ -1,0 +1,15 @@
+@font-face {
+    font-family: "font-menu";
+    src: url(../assets/fonts/DynaPuff-VariableFont_wdth\wght.ttf);
+}
+
+$font-menu : "font-menu", sans-serif;
+
+* {
+color: white;
+}
+
+
+body {
+    background: black;
+}
