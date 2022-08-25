@@ -1,0 +1,42 @@
+.home {
+
+    .first-container {
+        
+        margin: 100px auto;
+    }
+
+    .row {
+        width: 100%;
+   
+    }
+
+    
+    .col-img {
+        
+        text-align: center;
+
+        img {
+            width: 60%;
+        }
+        
+    } 
+
+    .col-text {
+
+        display: table-cell;
+        vertical-align: middle;
+
+        h1 {
+            font-size: 25px;
+            text-align: center;
+            margin-bottom: 30px ;
+        }
+
+        p {
+            font-size: 20px;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
