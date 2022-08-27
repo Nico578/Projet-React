@@ -6,12 +6,12 @@ const Home = () => {
   return (
     <div className="home">
       <Navigation />
-      <div class="container first-container">
-        <div class="row row-cols-1 row-cols-sm-2">
-          <div class="col col-sm-5 col-img img">
+      <div class="container container-fluid first-container">
+        <div class="row">
+          <div class="col col-img img">
             <img src={dev} alt="developpeur" />
           </div>
-          <div class="col col-sm-7 col-text">
+          <div class="col col-text">
             <h1>Qu'est ce qu'un developpeur Web ?</h1>
             <p>
               Le développeur web est un professionnel qui réalise l’ensemble des
