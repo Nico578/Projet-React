@@ -62,20 +62,18 @@
         }
       }
     }
-
-    .navbar-toggler-icon {
-      margin-top: -100px;
-    }
+    
   }
 
   @media screen and (max-width: 992px) {
+
     .container-fluid {
       display: flex;
     }
 
     .navbar-toggler {
       margin-top: -100px;
-      border: none;
+      color: aliceblue;
     }
 
     .navbar-toggler:focus {
@@ -85,7 +83,12 @@
     a {
         text-decoration-line: none;
         margin: auto;
-        width: 15% !important;
+        width: 30%;
+    }
+
+    li {
+      font-size: 20px;
+      text-align: center;
     }
   }
 }

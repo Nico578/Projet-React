@@ -7,21 +7,21 @@ const Navigation = () => {
     <div className="navigation">
       <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
-        <div className="logo navbar-brand">
-        <img src={logo} alt="Logo Pour Fond Sombre" />
-      </div>
+          <div className="logo navbar-brand">
+            <img src={logo} alt="Logo Pour Fond Sombre" />
+          </div>
           <button
             class="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
-            data-bs-target="#navbarNavDropdown"
-            aria-controls="navbarNavDropdown"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <NavLink
                 to="/"

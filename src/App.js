@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Mysites from "./pages/Mysites";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Scoreboard from "./pages/Scoreboard";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
           <Route path="/Mes-sites" element={<Mysites />} />
           <Route path="/A-propos" element={<About />} />
           <Route path="/Contact" exact element={<Contact />} />
+          <Route path="/Scoreboard" exact element={<Scoreboard />} />
         </Routes>
       </BrowserRouter>
     </div>

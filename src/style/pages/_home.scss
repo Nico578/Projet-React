@@ -1,6 +1,6 @@
 .home {
   .first-container {
-    padding: 100px 0;
+    padding: 50px 0;
   }
 
   .row {
@@ -75,11 +75,9 @@
     }
 
     .col-img {
-        text-align: center;
-    
-        img {
-          width: 40%;
-        }
+      width: 80%;
+      text-align: center;
+      margin: auto;
     }
 
     .col-text {
@@ -87,6 +85,19 @@
         margin: auto;
         padding: 50px 50px;
         max-width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+
+
+    .container {
+      margin: auto;
+      padding: 0;
+    }
+
+    .col-img {
+        display: none;
     }
   }
 }
