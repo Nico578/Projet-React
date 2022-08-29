@@ -3,40 +3,77 @@ import Navigation from "../components/Navigation";
 
 const Scoreboard = () => {
   let teamH = "";
+  let teamV = "";
 
   const teamHome = (e) => {
     teamH = e.target.value;
+  };
+
+  const teamVisitor = (e) => {
+    teamV = e.target.value;
   };
 
   const btn = (e) => {
     e.preventDefault();
 
     if (teamH.length < 3) {
-      document.getElementById('error').innerHTML="Veuillez entrez 3 caractères minimum";
-      
+      document.getElementById("errorH").innerHTML =
+        "Veuillez entrez 3 caractères minimum";
+    }
+    if (teamV.length < 3) {
+      document.getElementById("errorV").innerHTML =
+        "Veuillez entrez 3 caractères minimum";
     } else {
-      document.getElementById('error').style.display= 'none'
-      console.log(teamH)
+      document.getElementById("errorV").style.display = "none";
+      document.getElementById("errorH").style.display = "none";
+      console.log(teamH);
+      console.log(teamV);
     }
   };
 
   return (
     <div className="scoreboard">
       <Navigation />
-      <form className="teamHome">
-        <label id="teamHomeLabel" htmlFor="teamHome"> Nom de l'équipe à domicile</label>
-        <input
-          onChange={teamHome}
-          className="form-control-home teamHome-container"
-          type="text"
-          autoComplete="off"
-          id="teamHome"
-          placeholder="Entrez le nom de l'équipe ici"
-          aria-label="Nom de l'équipe à domicile"
-          name="team"
-        />
-        <span id="error"></span>
+      <div className="container-fluid first-container">
+        <div className="team-container">
+          <form className="teamHome">
+            <label id="teamHomeLabel" htmlFor="teamHome">
+              Nom de l'équipe à domicile
+            </label>
+            <input
+              onChange={teamHome}
+              className="form-control-home teamHome-container"
+              type="text"
+              autoComplete="off"
+              id="teamHome"
+              placeholder="Entrez le nom de l'équipe ici"
+              aria-label="Nom de l'équipe à domicile"
+              name="team"
+            />
+            <span id="errorH"></span>
+          </form>
+        </div>
 
+        <div className="team-container">
+          <form action="">
+            <label id="teamVisitorLabel" htmlFor="teamVisitor">
+              Nom de l'équipe à l'exterieur
+            </label>
+            <input
+              onChange={teamVisitor}
+              className="form-control-visitor teamVisitor-container"
+              type="text"
+              autoComplete="off"
+              id="teamVisitor"
+              placeholder="Entrez le nom de l'équipe ici"
+              aria-label="Nom de l'équipe à l'exterieur"
+            />
+            <span id="errorV"></span>
+          </form>
+        </div>
+      </div>
+
+      <form action="">
         <input onClick={btn} type="submit" value="Valider" className="btn" />
       </form>
     </div>

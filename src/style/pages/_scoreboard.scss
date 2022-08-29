@@ -1,39 +1,43 @@
 .scoreboard {
+
+  .first-container {
+    display: flex;
+  }
+
   input {
     color: black;
   }
 
-  .teamHome {
-    margin: 50px auto;
-    display: flex;
-    flex-direction: column;
+  .team-container {
+    width: 300px;
+    margin: auto;
+    text-align: center;
 
-    .teamHome-container{
-        width: 20%;
-        display: flex;
-        margin: auto;
-        text-align: center;
+    .teamHome, .teamVisitor {
+      margin: 50px auto;
+      display: flex;
+      flex-direction: column;
     }
-
-    #teamHomeLabel {
+  
+      #teamHomeLabel, #teamVisitorLabel {
         text-align: center;
         padding: 0 0 20px 0;
-    }
-
-    #error {
+      }
+  
+      #errorH, #errorV {
         text-align: center;
         padding-top: 5px;
         color: red;
-    }
-
-
+      }
   }
+  
 
-  .btn {
-    width: 10%;
-    margin:  20px auto;
-    display: flex;
-    justify-content: center;
-    color: white;
-  }
+.btn {
+  width: 20%;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
 }
