@@ -1,116 +1,77 @@
 import React from "react";
+import { appendErrors, useForm } from "react-hook-form";
 
 const Teamchoice = () => {
-  let teamH = "";
-  let teamV = "";
-  let colorH = "";
-  let colorV = "";
+  
 
-  const teamHome = (e) => {
-    teamH = e.target.value;
+  const {
+    handleSubmit,
+    register,
+    formState: { errors },
+  } = useForm();
 
-    if (teamH.length < 3) {
-      document.getElementById("errorH").style.visibility = "visible";
-      document.getElementById("errorH").innerHTML = "3 caractères obligatoire";
-    } else {
-      document.getElementById("errorH").style.visibility = "hidden";
-    }
-  };
+  function onSubmit(data) {
+    console.log(data);
+  }
 
-  const teamVisitor = (e) => {
-    teamV = e.target.value;
-
-    if (teamV.length < 3) {
-      document.getElementById("errorV").style.visibility = "visible";
-      document.getElementById("errorV").innerHTML = "3 caractères obligatoire";
-    } else {
-      document.getElementById("errorV").style.visibility = "hidden";
-    }
-  };
-
-  const colorHome = (e) => {
-    console.log(colorH);
-    colorH = e.target.value;
-  };
-
-  const colorVisitor = (e) => {
-    colorV = e.target.value;
-  };
-
-  const btn = (e) => {
-    e.preventDefault();
-
-    if ((colorV.length && colorH.length && teamH.length && teamV.length)< 3) {
-      document.getElementById("error").innerHTML =
-        "Veuillez renseigner tous les champs";
-    } else {
-      document.getElementById("error").style.visibility =
-        "hidden";
-    }
-  };
   return (
     <div className="teamchoice">
-      <div className="container-fluid first-container">
-        <div className="team-container">
-          <form className="teamHome">
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <div className="container-fluid first-container">
+          <div className="team-container">
             <label id="teamHomeLabel" htmlFor="teamHome">
               Nom de l'équipe à domicile
             </label>
             <input
-              onChange={teamHome}
               className="form-control-home teamHome-container"
               type="text"
               autoComplete="off"
               id="teamHome"
               placeholder="Entrez le nom de l'équipe ici"
-              aria-label="Nom de l'équipe à domicile"
+              {...register("teamHome", { minLength: 3, required: true })}
             />
+            {errors.teamHome && <p>3 caractères minimum obligatoire</p>}
             <span id="errorH"></span>
             <label htmlFor="colorInputHome" class="form-label">
               Couleur du maillot
             </label>
             <input
-              onChange={colorHome}
               type="color"
               className="form-control form-control-color"
               id="colorInputHome"
               title="Choisissez votre couleur"
+              {...register("colorHome", { onChange: true, required: true })}
             />
-          </form>
-        </div>
-
-        <div className="team-container">
-          <form action="">
+          </div>
+          <div className="team-container">
             <label id="teamVisitorLabel" htmlFor="teamVisitor">
               Nom de l'équipe à l'exterieur
             </label>
             <input
-              onChange={teamVisitor}
               className="form-control-visitor teamVisitor-container"
               type="text"
               autoComplete="off"
               id="teamVisitor"
               placeholder="Entrez le nom de l'équipe ici"
-              aria-label="Nom de l'équipe à l'exterieur"
+              {...register("teamVisitor", { minLength: 3, required: true })}
             />
+            {errors.teamVisitor && <p>3 caractères minimum obligatoire</p>}
             <span id="errorV"></span>
             <label htmlFor="colorInputVisitor" class="form-label">
               Couleur du maillot
             </label>
             <input
-              onChange={colorVisitor}
               type="color"
               className="form-control form-control-color"
               id="colorInputVisitor"
               title="Choisissez votre couleur"
+              {...register("colorVisitor", { required: true })}
             />
-          </form>
+          </div>
         </div>
-      </div>
-      <form action="">
-        <input onClick={btn} type="submit" value="Valider" className="btn" />
+        <input type="submit" value="Valider" className="btn" />
+        <span id="error"></span>
       </form>
-      <span id="error"></span>
     </div>
   );
 };

@@ -1,59 +1,61 @@
 .teamchoice {
+  .first-container {
+    display: flex;
+  }
 
-    .first-container {
-        display: flex;
-      }
-    
-      input {
-        color: black;
-      }
-    
-      .team-container {
-        width: 300px;
-        margin: auto;
-        text-align: center;
-    
-        .teamHome, .teamVisitor {
-          margin: 50px auto;
-          display: flex;
-          flex-direction: column;
-        }
-      
-          #teamHomeLabel, #teamVisitorLabel {
-            text-align: center;
-            padding: 0 0 20px 0;
-          }
-      
-          
-      }
+  input {
+    color: black;
+  }
 
-    
-        span {
-          width: 100%;
-          margin: auto;
-          text-align: center;
-          color: red;
-        }
-    
-    
-      .form-label {
-        margin: 20px auto;
-      }
-    
-      .form-control-color {
-        margin: auto;
-        padding: 2px;
-        background: wheat;
-      }
-    
-    
-    
-    .btn {
-      width: 20%;
-      margin: 20px auto;
+  .team-container {
+    width: 300px;
+    margin: auto;
+    text-align: center;
+
+    .teamHome,
+    .teamVisitor {
+      margin: 50px auto;
       display: flex;
-      justify-content: center;
-      color: white;
+      flex-direction: column;
     }
-    
+
+    #teamHomeLabel,
+    #teamVisitorLabel {
+      text-align: center;
+      padding: 0 0 20px 0;
+    }
+  }
+
+  .form-label {
+    margin: 20px auto;
+  }
+
+  .form-control-color {
+    margin: auto;
+    padding: 2px;
+    background: wheat;
+  }
+
+  span,
+  #error {
+    display: grid;
+    margin: auto;
+    text-align: center;
+    color: red;
+    animation: error 1s linear infinite;
+  }
+  @keyframes error {
+    50% {
+      opacity: 50%;
+    }
+  }
+
+  .btn {
+    width: 20%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    color: white;
+    border: solid 2px white;
+  }
 }
