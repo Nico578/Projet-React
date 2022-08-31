@@ -1,4 +1,4 @@
-.teamchoice{
+.teamchoice {
 
     .first-container {
         display: flex;
@@ -24,12 +24,17 @@
             padding: 0 0 20px 0;
           }
       
-          #errorH, #errorV {
-            text-align: center;
-            padding-top: 5px;
-            color: red;
-          }
+          
       }
+
+    
+        span {
+          width: 100%;
+          margin: auto;
+          text-align: center;
+          color: red;
+        }
+    
     
       .form-label {
         margin: 20px auto;
