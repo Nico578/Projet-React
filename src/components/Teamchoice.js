@@ -1,46 +1,72 @@
 import React from "react";
-import { appendErrors, useForm } from "react-hook-form";
 
 const Teamchoice = () => {
   
+  let teamH = ""
+  let teamV = ""
+  let colorH = ""
+  let colorV = ""
 
-  const {
-    handleSubmit,
-    register,
-    formState: { errors },
-  } = useForm();
+  const teamHome = (e) => {
+    teamH = e.target.value;
 
-  function onSubmit(data) {
-    console.log(data);
+    if (teamH.length < 3) {
+      document.getElementById("errorH").style.visibility = "visible";
+      document.getElementById("errorH").innerHTML = "3 caractères minimum obligatoire";
+    } else {
+      document.getElementById("errorH").style.visibility = "hidden";
+    }
+  };
+
+  const teamVisitor = (e) => {
+    teamV = e.target.value;
+
+    if (teamV.length < 3) {
+      document.getElementById("errorV").style.visibility = "visible";
+      document.getElementById("errorV").innerHTML = "3 caractères minimum obligatoire";
+    } else {
+      document.getElementById("errorV").style.visibility = "hidden";
+    }
+  };
+
+  const colorHome = (e) => {
+    colorH = e.target.value;
+  };
+
+  const colorVisitor = (e) => {
+    colorV = e.target.value;
+  };
+
+  const submit = () => {
+    
   }
 
   return (
     <div className="teamchoice">
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={submit}>
         <div className="container-fluid first-container">
           <div className="team-container">
             <label id="teamHomeLabel" htmlFor="teamHome">
               Nom de l'équipe à domicile
             </label>
             <input
+              onChange={teamHome}
               className="form-control-home teamHome-container"
               type="text"
               autoComplete="off"
               id="teamHome"
               placeholder="Entrez le nom de l'équipe ici"
-              {...register("teamHome", { minLength: 3, required: true })}
             />
-            {errors.teamHome && <p>3 caractères minimum obligatoire</p>}
             <span id="errorH"></span>
             <label htmlFor="colorInputHome" class="form-label">
               Couleur du maillot
             </label>
             <input
+              onChange={colorHome}
               type="color"
               className="form-control form-control-color"
               id="colorInputHome"
               title="Choisissez votre couleur"
-              {...register("colorHome", { onChange: true, required: true })}
             />
           </div>
           <div className="team-container">
@@ -48,24 +74,23 @@ const Teamchoice = () => {
               Nom de l'équipe à l'exterieur
             </label>
             <input
+              onChange={teamVisitor}
               className="form-control-visitor teamVisitor-container"
               type="text"
               autoComplete="off"
               id="teamVisitor"
               placeholder="Entrez le nom de l'équipe ici"
-              {...register("teamVisitor", { minLength: 3, required: true })}
             />
-            {errors.teamVisitor && <p>3 caractères minimum obligatoire</p>}
             <span id="errorV"></span>
             <label htmlFor="colorInputVisitor" class="form-label">
               Couleur du maillot
             </label>
             <input
+              onChange={colorVisitor}
               type="color"
               className="form-control form-control-color"
               id="colorInputVisitor"
               title="Choisissez votre couleur"
-              {...register("colorVisitor", { required: true })}
             />
           </div>
         </div>
